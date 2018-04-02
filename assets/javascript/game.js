@@ -8,6 +8,10 @@
 
     var numberOptions = [10, 5, 3, 7];
 
+    var winSum=0;
+
+    var loseSum=0;
+
 
     // need to turn this loop into the 4 images and link a number to each
 
@@ -32,12 +36,21 @@ crystals.on("click", ".crystal-image", function()  {
     $("#result").text(counter);
 
     if (counter === targetNumber)  {
-        alert("You Win!");
+        winSum++;        
+        document.getElementById("resultMessage").innerText = "You Win!";
+        document.getElementById("totalWins").innerText = winSum;
+        hasFinished = true;
+        
     }
 
     else if (counter >= targetNumber) {
-        alert("You lose!");
+        loseSum++;        
+        document.getElementById("resultMessage").innerText = "You Lose!";
+        document.getElementById("totalLosses").innerText = loseSum;
+        hasFinished = true;
     }
 });
+
+
 
 
