@@ -1,4 +1,56 @@
 .crystal-image {
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 150px;
     }
+
+body {
+    padding-top: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-shadow: rgb(23, 201, 53);
+    background: url('flowerOfLife.jpg') no-repeat;
+    background-size: cover;
+}
+.container { 
+    text-align: center;
+    
+}
+
+h1 {
+    color: white;
+}
+
+#collectorTitle {
+    padding-top: 20px;
+    border: 10px  rgb(15, 4, 4);
+    text-align: center;
+    margin-top: 20px;
+    margin-left:100px;
+    margin-right:100px;
+    background-color: rgba(194, 18, 33, 0.3);
+    opacity: 1;
+      /*how to make this not see through to block background image from distorting the text */
+}
+
+
+#hm {
+    padding-top: 20px;
+    border: 10px  rgb(15, 4, 4);
+    text-align: center;
+    margin-top: 20px;
+    margin-left:100px;
+    margin-right:100px;
+    background-color: rgba(180, 162, 83, 0.3);
+    opacity: 1;
+    /*how to make this not see through to block background image from distorting the text */
+}
+
+p {
+    margin-left:50px;
+    margin-right:50px;
+    color: green;
+    clear: both;
+    text-align: center;
+}
+    
+    

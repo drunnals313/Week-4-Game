@@ -8,13 +8,16 @@
 
     var numberOptions = [10, 5, 3, 7];
 
+
+    // need to turn this loop into the 4 images and link a number to each
+
     for (var i = 0; i< numberOptions.length; i++) {
 
         var imageCrystal = $("<img>");
 
         imageCrystal.addClass("crystal-image");
 
-        imageCrystal.attr(<img class="crystal-image" src="assets/immages/fireOpal.jpg" alt="fire opal"/>);
+        imageCrystal.attr("src", "assets/immages/fireOpal.jpg");
 
         imageCrystal.attr("data-crystalvalue", numberOptions[i]);
 
@@ -26,7 +29,7 @@ crystals.on("click", ".crystal-image", function()  {
 
     counter += crystalValue;
 
-    alert("New score: " + counter);
+    $("#result").text(counter);
 
     if (counter === targetNumber)  {
         alert("You Win!");
@@ -36,3 +39,5 @@ crystals.on("click", ".crystal-image", function()  {
         alert("You lose!");
     }
 });
+
+

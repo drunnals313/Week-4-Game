@@ -21,26 +21,60 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
-</head>
-<body>
-
-    <h1>Crystals Collector!</h1>
-
-    <h2><p>directions and such go here</p></h2>
-
-    <!-- placeholder for wins and loses and other fields -->
-
-    <h3>Number to guess: <span id="number-to-guess"></span></h3>
-
-    <div id="crystals">
-
-    </div>
-
-
-<!-- Added link to the jQuery Library -->
+    <!-- Added link to the jQuery Library -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   
+
+</head>
+<body>
+    <div class="container" id="collectorTitle">
+    <h1>Crystals Collector!</h1>
+    </div>
+
+    <div class="row" id="hm" class="container">
+        <p>
+            You will be given a random number at the start of the game.
+    
+            There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+        
+            You win the game by making your total score to random number, you lose the game if your total score goes above the random number.
+        
+            The value of each crystal is hidden from you until you click on it.
+        
+            Each time when the game starts, the game will change the values of each crystal.
+        </p>
+    </div>
+
+    <div class="container" class="row">
+
+    <!-- placeholder for wins and loses and other fields -->
+        <div class="col-md-4" class="container">
+        <h3>Number to guess: <span id="number-to-guess"></span></h3>
+        </div>
+        <div class="col-md-4" class="container" id="crystals">
+            <h3 id="currentWord"></h3>
+            <h4>Wins:</h4><h5 id="totalWins"></h5>
+            <h4>Losses:</h4><h5 id="totalLosses"></h5>
+        </div>
+
+    </div>
+
+    <div class="container" class="row">
+        <img src="assets/images/chalca.jpg" alt="" id="chalcaI" class="crystal-image">
+        <img src="assets/images/Crystal-Quartz.jpg" alt="" id="quartzI" class="crystal-image">
+        <img src="assets/images/fireOpal.jpg" alt="" id="opalI" class="crystal-image">
+        <img src="assets/images/ocean.jpg" alt="" id="oceanI" class="crystal-image">
+        
+    </div>
+
+    <div class="container" class="row">
+        <h3>Your Score is:</h3>
+    </div>
+
+    <div class="container" class="row">
+        <h3 id="result"></h3>
+    </div>
 
 </body>
 </html>
