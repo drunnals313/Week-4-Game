@@ -49,10 +49,10 @@
     <div class="container" class="row">
 
     <!-- placeholder for wins and loses and other fields -->
-        <div class="col-md-4" class="container">
+        <div class="col-md-4" class="container" id="guessBox">
         <h3>Number to guess: <span id="number-to-guess"></span></h3>
         </div>
-        <div class="col-md-4" class="container" id="crystals">
+        <div class="col-md-4" class="container" id="totalWL">
             <h3 id="resultMessage"></h3>
             <h4>Wins:</h4><h5 id="totalWins"></h5>
             <h4>Losses:</h4><h5 id="totalLosses"></h5>
@@ -60,7 +60,7 @@
 
     </div>
 
-    <div class="container" class="row">
+    <div class="container" class="row" id="crystals">
         <img src="assets/images/chalca.jpg" alt="" id="chalcaI" class="crystal-image">
         <img src="assets/images/Crystal-Quartz.jpg" alt="" id="quartzI" class="crystal-image">
         <img src="assets/images/fireOpal.jpg" alt="" id="opalI" class="crystal-image">
@@ -69,11 +69,11 @@
     </div>
 
     <div class="container" id="scoreBox" class="row">
-        <h3>Your Score is:</h3>
+        <h5>Your Score is:</h5>
     </div>
 
     <div class="container" id="resultBox" class="row">
-        <h3 id="result"></h3>
+        <h5 id="result"></h5>
     </div>
 
 </body>

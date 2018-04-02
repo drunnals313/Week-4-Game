@@ -12,20 +12,24 @@
 
     var loseSum=0;
 
+    var isCalculated = false;
+
+    var imageArray = ["chalca.jpg", "Crystal-Quartz.jpg", "fireOpal.jpg", "ocean.jpg"]
 
     // need to turn this loop into the 4 images and link a number to each
 
     for (var i = 0; i< numberOptions.length; i++) {
 
-        var imageCrystal = $("<img>");
+        // var imageCrystal = $("<img>");
 
-        imageCrystal.addClass("crystal-image");
 
-        imageCrystal.attr("src", "assets/immages/fireOpal.jpg");
+        imageArray.addClass("crystal-image");
 
-        imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+        //imageArray.attr("src", "assets/immages/fireOpal.jpg");
 
-        crystals.append(imageCrystal);         
+        imageArray.attr("data-crystalvalue", numberOptions[i]);
+
+        //crystals.append(imageArray);         
     }
 
 crystals.on("click", ".crystal-image", function()  {
@@ -39,7 +43,7 @@ crystals.on("click", ".crystal-image", function()  {
         winSum++;        
         document.getElementById("resultMessage").innerText = "You Win!";
         document.getElementById("totalWins").innerText = winSum;
-        hasFinished = true;
+        isCalculated = true;
         
     }
 
@@ -47,7 +51,7 @@ crystals.on("click", ".crystal-image", function()  {
         loseSum++;        
         document.getElementById("resultMessage").innerText = "You Lose!";
         document.getElementById("totalLosses").innerText = loseSum;
-        hasFinished = true;
+        isCalculated = true;
     }
 });
 
