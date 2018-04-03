@@ -49,8 +49,8 @@ p {
     margin-left:50px;
     margin-right:50px;
     color: green;
-    clear: both;
     text-align: center;
+    word-wrap: auto;
 }
     
     
@@ -82,8 +82,8 @@ p {
     border: 10px  rgb(15, 4, 4);
     text-align: center;
     margin-top: 20px;
-    margin-left:100px;
-    margin-right:100px;
+    margin-left:50px;
+    margin-right:50px;
     background-color: rgba(5, 236, 52, 0.3);
     opacity: 1;
     /*how to make this not see through to block background image from distorting the text */
@@ -93,8 +93,8 @@ p {
     border: 10px  rgb(15, 4, 4);
     text-align: center;
     margin-top: 20px;
-    margin-left:100px;
-    margin-right:100px;
+    margin-left: 50px;
+    margin-right:50px;
     background-color: rgba(11, 173, 194, 0.3);
     opacity: 1;
     /*how to make this not see through to block background image from distorting the text */
