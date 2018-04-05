@@ -14,10 +14,7 @@
 <link rel="stylesheet" href="assets/css/style.css" />
   
 
- 
-  
-
-  <!-- Added a link to Bootstrap-->
+<!-- Added a link to Bootstrap-->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
@@ -29,7 +26,7 @@
 
 <body>
     <div class="container" id="collectorTitle">
-    <h1>CrystalsCollector!</h1>
+        <h1>CrystalsCollector!</h1>
     </div>
 
     <div class="row" id="hm" class="container">
@@ -47,38 +44,32 @@
     </div>
 
     <div class="container" class="row">
-
-    <!-- placeholder for wins and loses and other fields -->
-        <div class="col-md-4" class="container" id="guessBox">
-            <h2>Number to guess: <span id="number-to-guess"></span></h2>
+        <div class="col-md-3" id="guessBox">
+            <h1>Number to Guess: <span id="number-to-guess"></span></h1>
         </div>
-        <div class="col-md-4" class="container" id="totalWL">
-            <h3 id="resultMessage"></h3>
-            <h4>Wins:</h4><h5 id="totalWins"></h5>
-            <h4>Losses:</h4><h5 id="totalLosses"></h5>
+<!-- cannot get win and lose messages to display in time before I rest everything -->
+        <div class="col-md-3" id="messageBox">
+            <h1><span id="messageWL"></span></h1>
         </div>
 
+        <div class="col-md-3" id="totalWL">
+            <h1>Wins: <span id="winTotal"></span></h1>
+            <h1>Losses: <span id="loseTotal"></span></h1>
+        </div>
     </div>
-
-    <div class="container" class="row" id="crystals">
+    
+   
+    <div class="row" id="crystals">
+    </div>
         
-       <!-- <img src="assets/images/chalca.jpg" alt="" id="chalcaI">
-        <img src="assets/images/Crystal-Quartz.jpg" alt="" id="quartzI">
-        <img src="assets/images/fireOpal.jpg" alt="" id="opalI">
-        <img src="assets/images/ocean.jpg" alt="" id="oceanI">
-       -->
-    </div>
-
     <div class="container" id="scoreBox" class="row">
         <h5>Your Score is:</h5>
     </div>
-
-    <div class="container" id="resultBox" class="row">
-        <h5 id="result"></h5>
-    </div>
-
-
     
+    <div class="container" id="resultBox" class="row">
+        <h5 id="totalScore"></h5>
+    </div>
+  
 
 
 

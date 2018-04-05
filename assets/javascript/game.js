@@ -1,102 +1,110 @@
-var targetNumber = 13; //need to make random once I can get it to work
+var minNumber = 13;
+  var maxNumber = 55
 
-$("#number-to-guess").text(targetNumber);
+  var targetNumber = randomNumberFromRange(minNumber, maxNumber);
 
-var crystals = $("#crystals");
+  function randomNumberFromRange(min,max)
+  {
+      return Math.floor(Math.random()*(max-min+1)+min);
+  }  
 
-var counter = 0;
+  //var targetNumber = 13;
 
-var numberOptions = [10, 5, 3, 7]; // need to make random once I can get it to work   can use math floor random
+  var winT = 0;
 
-var winSum=0;
+  var loseT = 0;
 
-var loseSum=0;
+  $("#number-to-guess").text(targetNumber);
 
-var isCalculated = false;
+  var crystals = $("#crystals");
 
-var Chalca = {
-    name = "Chalca",
-    value = 2
-    //1 + Math.floor(Math.random() * 1), 
-}
+  var counter = 0;
 
-var Quartz = {
-    name = "Quartz",
-    value =3
-    //1 + Math.floor(Math.random() * 1),
-}
+  
+  
 
-var Opal = {
-    name = "Opal",
-    value = 5
-    //1 + Math.floor(Math.random() * 1),
-}
+ 
 
-var Ocean = {
-    name = "Ocean",
-    value = 8
-    //1 + Math.floor(Math.random() * 1),
-}
+  // We begin by expanding our array to include four options. NEED TO MAKE RANDOM BEFORE FINALIZING
+  var numberOptions = [2, 3, 5, 8];
 
+  // Next we create a for loop to create crystals for every numberOption.
+  for (var i = 0; i < numberOptions.length; i++) {
 
-Chalca.addClass("crystal-image");
-Quartz.addClass("crystal-image");
-Opal.addClass("crystal-image");
-Ocean.addClass("crystal-image");
+    // For each iteration, we will create an imageCrystal
+    var imageCrystal = $("<img>");
 
-Chalca.attr("data-crystalvalue", Chalca.value);
-Quartz.attr("data-crystalvalue", Quartz.value);
-Opal.attr("data-crystalvalue", Opal.value);
-Ocean.attr("data-crystalvalue", Ocean.value);
+    // First each crystal will be given the class ".crystal-image".
+    // This will allow the CSS to take effect.
+    imageCrystal.addClass("crystal-image");
 
+    // Each imageCrystal will be given a src link to the crystal image
+    imageCrystal.attr("src", "https://mattfiske.files.wordpress.com/2014/02/moldavite.jpg");
 
+    // Each imageCrystal will be given a data attribute called data-crystalValue.
+    // This data attribute will be set equal to the array value.
+    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
 
-////var imageArray = {"imageOne": "chalca.jpg", "imageTwo": "Crystal-Quartz.jpg", "imageThree": "fireOpal.jpg", "imageFour": "ocean.jpg" }  
+    // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
+    crystals.append(imageCrystal);
+  }
 
-// turn these into objects (box of labeled boxes)  gandalf.age example
+  // This time, our click event applies to every single crystal on the page. Not just one.
+  crystals.on("click", ".crystal-image", function() {
 
-// need to turn this loop into the 4 images and link a number to each
+    // Determining the crystal's value requires us to extract the value from the data attribute.
+    // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
+    // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
+    // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
 
-////for (var i = 0; i< numberOptions.length; i++) {
-
-    // var imageCrystal = $("<img>");
-
-
-    ////imageArray.addClass("crystal-image");
-
-    //imageArray.attr("src", "assets/immages/fireOpal.jpg");
-
-    ////imageArray.attr("data-crystalvalue", numberOptions[i]);
-
-    //crystals.append(imageArray);         
-}
-
-
-
-crystals.on("click", ".crystal-image", function()  {
     var crystalValue = ($(this).attr("data-crystalvalue"));
-
     crystalValue = parseInt(crystalValue);
-
+    // We then add the crystalValue to the user's "counter" which is a global variable.
+    // Every click, from every crystal adds to the global counter.
     counter += crystalValue;
 
-    $("#result").text(counter);
+    // All of the same game win-lose logic applies. So the rest remains unchanged.
+    $("#totalScore").text(+ counter);
+    //alert("New score: " + counter);
 
-    if (counter === targetNumber)  {
-        winSum++;        
-        document.getElementById("resultMessage").innerText = "You Win!";
-        document.getElementById("totalWins").innerText = winSum;
-        isCalculated = true;
-        
+    if (counter === targetNumber) {
+      winT++;
+      $("#messageWL").text("You Win").delay(5000);
+      
+      //alert("You win!");
+      $("#winTotal").text(+ winT);
+      resetGame();
     }
 
     else if (counter >= targetNumber) {
-        loseSum++;        
-        document.getElementById("resultMessage").innerText = "You Lose!";
-        document.getElementById("totalLosses").innerText = loseSum;
-        isCalculated = true;
+      loseT++;
+      $("#messageWL").text("You Lose").delay(5000);
+      //alert("You lose!!");
+      
+      $("#loseTotal").text(+ loseT);
+      resetGame();
     }
-});
+
+  });
+
+  function resetGame() {
+    
+    //gameStarted = false;
+    
+    targetNumber = randomNumberFromRange(minNumber, maxNumber);
+
+    counter = 0;
+  
+    updateDisplay();
+};
+
+
+function updateDisplay() {
+
+    $("#totalScore").text(+ counter);
+    $("#messageWL").text("");
+    $("#number-to-guess").text(targetNumber);
+    }
 
 
 
