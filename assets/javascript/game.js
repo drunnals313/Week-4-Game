@@ -39,7 +39,9 @@ var imageCrystal = $("<img>");
 imageCrystal.addClass("crystal-image");
 
 // Each imageCrystal will be given a src link to the crystal image
-imageCrystal.attr("src", "https://mattfiske.files.wordpress.com/2014/02/moldavite.jpg");
+imageCrystal.attr("src", "./assets/images/image" + i + ".jpg" );  //"https://mattfiske.files.wordpress.com/2014/02/moldavite.jpg"
+ 
+
 
 // Each imageCrystal will be given a data attribute called data-crystalValue.
 // This data attribute will be set equal to the array value.
@@ -69,20 +71,22 @@ $("#totalScore").text(+ counter);
 
 if (counter === targetNumber) {
     winT++;
-    $("#messageWL").text("You Win").delay(5000);
+    $("#messageWL").text("You Win");
     
-    //alert("You win!");
     $("#winTotal").text(+ winT);
-    resetGame();
+    
+    setTimeout(function(){resetGame()}, 3000);
+    
 }
 
 else if (counter >= targetNumber) {
     loseT++;
-    $("#messageWL").text("You Lose").delay(5000);
-    //alert("You lose!!");
+    $("#messageWL").text("You Lose");
     
     $("#loseTotal").text(+ loseT);
-    resetGame();
+    
+    setTimeout(function(){resetGame()}, 3000);
+   
 }
 
 });
